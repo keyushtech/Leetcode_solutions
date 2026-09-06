@@ -1,0 +1,24 @@
+// Title: Majority Element
+            // Difficulty: Easy
+            // Language: Python3
+            // Link: https://leetcode.com/problems/majority-element/
+
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        dicto = {}
+        for i in nums:
+            if i in dicto:
+                dicto[i]+=1
+            else:
+                dicto[i]=1
+
+        for i in dicto:
+
+        max = float('-inf')
+
+            if dicto[i]>max:
+                max = dicto[i]
+        return max_el
+        
+                max_el = i
+        
