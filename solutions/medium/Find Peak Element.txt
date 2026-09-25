@@ -20,4 +20,4 @@ class Solution:
                 right = mid
 
         # left (and right) points to a peak
-        return left
+        return right
