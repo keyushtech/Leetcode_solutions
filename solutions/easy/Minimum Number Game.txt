@@ -1,0 +1,16 @@
+// Title: Minimum Number Game
+            // Difficulty: Easy
+            // Language: Python3
+            // Link: https://leetcode.com/problems/minimum-number-game/
+
+class Solution:
+    def numberGame(self, nums: List[int]) -> List[int]:
+        arr = []
+        while len(nums)!=0:
+            k = min(nums)
+            nums.remove(k)
+            l = min(nums)
+            nums.remove(l)
+            arr.append(l)
+            arr.append(k)
+        return arr
