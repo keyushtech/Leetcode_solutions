@@ -5,16 +5,24 @@
 
 class Solution:
     def searchInsert(self, nums: list[int], target: int) -> int:
-        left, right = 0, len(nums) - 1
-        
-        while left <= right:
-            mid = left + (right - left) // 2
-            
-            if nums[mid] == target:
+        def search(start,end):
+            mid = (end+start) // 2
+            if nums[mid]==target:
                 return mid
-            elif nums[mid] < target:
-                left = mid + 1
+            elif nums[mid]<target:
+                if nums[end]<target:
+                    return end+1
+                if nums[mid+1]>target:
+                    return mid+1
+                else:
+                    return search(mid+1,end)
             else:
-                right = mid - 1
-                
-        return left
+                if nums[start]>target:
+                    return start
+                if nums[mid-1]<target:
+                    return mid
+                else:
+                    return search(start,mid)     
+
+        return search(0,len(nums)-1)     
+
