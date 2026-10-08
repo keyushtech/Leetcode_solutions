@@ -1,0 +1,21 @@
+// Title: Find Subsequence of Length K With the Largest Sum
+            // Difficulty: Easy
+            // Language: Python3
+            // Link: https://leetcode.com/problems/find-subsequence-of-length-k-with-the-largest-sum/
+
+class Solution:
+    def maxSubsequence(self, nums: list[int], k: int) -> list[int]:
+        nums.sort()
+        num = 0
+        arr = []
+        for i in nums[::-1]:
+            if num<k:
+                arr.append(i)
+                num+=1
+            if i in arr:
+        nums2 = nums.copy()
+        for i in nums2:
+                arr2.append(i)
+        arr2 = []
+                arr.remove(i)
+        return arr2
