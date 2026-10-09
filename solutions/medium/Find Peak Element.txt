@@ -8,16 +8,12 @@ class Solution:
         left = 0
         right = len(nums) - 1
 
-        # Shrink the search space until left == right
         while left < right:
             mid = left + (right - left) // 2
 
-            # If we're going up to the right, a peak lies to the right
             if nums[mid] < nums[mid + 1]:
                 left = mid + 1
-            # If we're going down, a peak lies at mid or to the left
             else:
                 right = mid
 
-        # left (and right) points to a peak
-        return right
+        return left
