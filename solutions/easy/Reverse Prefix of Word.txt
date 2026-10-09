@@ -3,21 +3,17 @@
             // Language: Python3
             // Link: https://leetcode.com/problems/reverse-prefix-of-word/
 
-            listy = []
-            for i in range(0, listy2.index(ch)+1):
-
-    def reversePrefix(self, word: str, ch: str) -> str:
 class Solution:
-                listy.insert(0, listy2[0])
-                listy2.pop(0)
-            listy = listy + listy2
-            k = ""
-                k += i
-            return k
-            for i in listy:
-        if ch in word:
-            listy2 = list(word)
-        
-        else:
+    def reversePrefix(self, word: str, ch: 
+    str) -> str:
+        idx = word.find(ch)
+        if idx == -1:
             return word
-
+        stack = []
+        for i in range(idx + 1):
+            stack.append(word[i])
+        res = []
+        while stack:
+            res.append(stack.pop())
+        res.append(word[idx + 1:])
+        return "".join(res)
