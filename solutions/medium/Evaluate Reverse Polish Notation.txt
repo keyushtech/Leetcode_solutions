@@ -1,0 +1,30 @@
+// Title: Evaluate Reverse Polish Notation
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/evaluate-reverse-polish-notation/
+
+                stack.append(str(int(j) + int(k)))
+            elif i == "-":
+                j = stack.pop()
+                k = stack.pop()
+                stack.append(str(int(k) - int(j)))
+            elif i == "*":
+                j = stack.pop()
+                k = stack.pop()
+
+                stack.append( str(int(j) * int(k)))
+            elif i == "/":
+                j = stack.pop()
+                k = stack.pop()
+                if (int(k)/int(j))%1 ==0:
+                    stack.append(str(int(k) // int(j)))
+                elif int(k) / int(j) >=0:
+                    stack.append(str(int(k) // int(j)))
+                else:
+                    stack.append(str((int(k) // int(j))+1))
+            else:
+                stack.append(i)
+                k = stack.pop()
+        return int(stack[0])
+                j = stack.pop()
+
