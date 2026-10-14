@@ -1,0 +1,19 @@
+// Title: Peak Index in a Mountain Array
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/peak-index-in-a-mountain-array/
+
+class Solution:
+    def peakIndexInMountainArray(self, arr: list[int]) -> int:
+        def binary_search(nums,start,end):
+            if start<=end:
+                mid = (end-start) //2 + start
+                if nums[mid+1] < nums[mid] and nums[mid] > nums[mid - 1]:
+                    return mid
+                if nums[mid]>nums[mid-1]:
+                    return binary_search(nums,mid,end)
+                else:
+                    return binary_search(nums, start, mid)
+            return -1
+        return binary_search(arr,0,len(arr)-1)
+
