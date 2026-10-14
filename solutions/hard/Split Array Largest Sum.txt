@@ -1,0 +1,32 @@
+// Title: Split Array Largest Sum
+            // Difficulty: Hard
+            // Language: Python3
+            // Link: https://leetcode.com/problems/split-array-largest-sum/
+
+                if j> mid:
+                    return False
+                if sum2+j <= mid:
+                    sum2 = sum2+j
+                else:
+                    cur_st+=1
+                    sum2=j
+            if cur_st > studn:
+                return False
+            return True
+
+        def allocate_books(nums, noofel, studn , start,end):
+            if studn>noofel:
+                return -1
+            global sum1
+            global ans
+            if start<=end:
+                mid = (end-start) //2 +start
+                if isvalid(nums,studn,mid):
+                    ans = mid
+                    return allocate_books(nums,noofel,studn,start,mid-1)
+                else:
+                    return allocate_books(nums, noofel, studn, mid+1, end)
+            return ans
+        return allocate_books(nums,n,k,0,sum1)
+            for j in nums:
+            sum2 = 0
