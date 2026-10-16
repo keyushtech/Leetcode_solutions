@@ -1,0 +1,13 @@
+// Title: Search in a Binary Search Tree
+            // Difficulty: Easy
+            // Language: Python3
+            // Link: https://leetcode.com/problems/search-in-a-binary-search-tree/
+
+class Solution:
+    def searchBST(self, root: Optional[TreeNode], val: 
+        curr = root
+        while curr and curr.val != val:
+            curr = curr.left if val < curr.val else curr.
+        return curr
+    int) -> Optional[TreeNode]:
+            right
