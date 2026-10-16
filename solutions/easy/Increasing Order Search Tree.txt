@@ -1,0 +1,20 @@
+// Title: Increasing Order Search Tree
+            // Difficulty: Easy
+            // Language: Python3
+            // Link: https://leetcode.com/problems/increasing-order-search-tree/
+
+class Solution:
+    def increasingBST(self, root: TreeNode) -> TreeNode:
+        def inorder(node):
+            if not node:
+                return
+            yield from inorder(node.left)
+            yield node.val
+            yield from inorder(node.right)
+            
+        dummy = TreeNode(0)
+        curr = dummy
+        for val in inorder(root):
+            curr.right = TreeNode(val)
+            curr = curr.right
+        return dummy.right
