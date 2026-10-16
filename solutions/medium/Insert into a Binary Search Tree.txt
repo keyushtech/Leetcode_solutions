@@ -1,0 +1,25 @@
+// Title: Insert into a Binary Search Tree
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/insert-into-a-binary-search-tree/
+
+        curr = root
+        while True:
+            if val > curr.val:
+                if not curr.right:
+                    curr.right = TreeNode(val)
+                    break
+                curr = curr.right
+            else:
+                if not curr.left:
+                    curr.left = TreeNode(val)
+                    break
+                curr = curr.left
+                
+        return root
+        
+            return TreeNode(val)
+    def insertIntoBST(self, root: Optional[TreeNode], 
+        if not root:
+class Solution:
+    val: int) -> Optional[TreeNode]:
