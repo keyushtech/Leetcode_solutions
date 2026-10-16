@@ -1,0 +1,26 @@
+// Title: Binary Tree Inorder Traversal
+            // Difficulty: Easy
+            // Language: Python3
+            // Link: https://leetcode.com/problems/binary-tree-inorder-traversal/
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+class Solution:
+    def inorderTraversal(self, root: Optional
+        result = []
+        
+        def dfs(node):
+            if not node:
+                return
+            dfs(node.left)          # Visit Left
+            result.append(node.val) # Visit Root
+            dfs(node.right)         # Visit Right
+            
+        dfs(root)
+        return result
+    [TreeNode]) -> List[int]:
